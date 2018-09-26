@@ -35,7 +35,7 @@ Open the `src/components/NameBlock.vue` -page (component) into a text-editor (or
 
 ## Build the custom web-component
 
-When done developing; quit the running development server by hitting `ctrl + c` on the terminal. Now run the command below to have `vue-cli` v3.x **build** this component into a W3C web-component inside the `docs/` directory.
+When done developing; quit the running development server by hitting `ctrl + c` on the terminal. Now run the command below to have `vue-cli` v3.x **build** this component into a W3C web-component inside the `docs/` directory. To change this `docs/` directory edit the `vue.config.js` and update the `package.json` -file `demo` -script (to serve which directory).
 
 I've used the `docs/` directory because this project is hosted on [Github](https://github.com/dutchwebworks/vue-web-component-demo) and this demo can be viewed from the Github Pages on a custom domain .
 
