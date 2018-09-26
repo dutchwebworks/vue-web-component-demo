@@ -12,24 +12,30 @@
         }
     </style>
 
-    <title>Hoi </title>
+    <title>VueJS Web-component</title>
 </head>
 
 <body>
-    <h1>Hoi Peter</h1>
+    <h1>VueJS Web-component</h1>
+
+    <h2>Normal HTML</h2>
+
+    <p>In the HTML-head of this static web page; there's a embedded style tag with some basic CSS. The CSS rules style the HTML button-tag with a 'gold' background-color. As you can see the web-component below also uses a HTML-button tag. But &hellip; that button is NOT styled according to the embedded CSS of this page.</p>
 
     <p>
-        <button>Peter</button>
+        <button>Also a button</button>
     </p>
 
-    <my-hello-world></my-hello-world>
+    <h2>Web-component</h2>
+
+    <name-block></name-block>
 
     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente, modi.</p>
 
+    <!-- Web component poly-fill, mainly for Edge -->
     <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.0.0/webcomponents-bundle.js"></script>
+
     <script src="https://unpkg.com/vue"></script>
-    <script src="./my-hello-world.js"></script>
-
+    <script src="./name-block.js"></script>
 </body>
-
 </html>

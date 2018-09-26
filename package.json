@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --target wc --name my-hello-world src/views/Home.vue",
+    "build": "vue-cli-service build --target wc --name name-block src/components/NameBlock.vue",
     "demo": "http-server dist"
   },
   "dependencies": {

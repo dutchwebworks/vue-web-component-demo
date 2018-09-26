@@ -25,13 +25,13 @@ npm install
 
 ## Run local VueJS development web server
 
-For this demo we'll focus on the `src/views/Home.vue` -page. And it into a custom **W3C HTML-tag** with a JavaScript file. Run the following to start the local (hot-reloading) development web server.
+For this demo we'll focus on the `src/components/NameBlock.vue` -page. And it into a custom **W3C HTML-tag** with a JavaScript file. Run the following to start the local (hot-reloading) development web server.
 
 ```bash
 npm run serve
 ```
 
-Open the `src/views/Home.vue` -page (component) into a text-editor (or IDE). This VueJS component (page) will be turned into a W3C Web-component.
+Open the `src/components/NameBlock.vue` -page (component) into a text-editor (or IDE). This VueJS component (page) will be turned into a W3C Web-component.
 
 ## Build the custom web-component
 
@@ -45,9 +45,9 @@ The result is a very short static `dist/demo.html` -page. With a few HTML `<scri
 
 ```html
 <script src="https://unpkg.com/vue"></script>
-<script src="./my-hello-world.js"></script>
+<script src="./name-block.js"></script>
 
-<my-hello-world></my-hello-world>
+<name-block></name-block>
 ```
 
 * The first `<script>` -line is the VueJS library loaded from a CDN.
@@ -66,11 +66,22 @@ Open the URL mentioned in the terminal in a web browser.
 
 ## Using the Web-component
 
-Now you can use this custom HTML-tag `<my-hello-world></my-hello-world>` along with those two `<script>` -tags inside other web pages.
+Now you can use this custom HTML-tag `<name-block></name-block>` along with those two `<script>` -tags inside other web pages.
 
 This setup uses the **Shadow DOM** for self-contained components.
+
+## Browser support
+
+As of this writing this VueJS Web-component demo works in:
+
+* Chrome
+* Firefox
+* Safari
+* Opera
+* Edge (with polly-fill)
 
 ## More info
 
 * [Create & Publish Web Components With Vue CLI 3](https://vuejsdevelopers.com/2018/05/21/vue-js-web-component/)
+* [Use Vue.js to create custom web components](http://vuetips.com/vue-web-components)
 * [Shadow DOM v1: Self-Contained Web Components](https://developers.google.com/web/fundamentals/web-components/shadowdom)
