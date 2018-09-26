@@ -35,13 +35,15 @@ Open the `src/components/NameBlock.vue` -page (component) into a text-editor (or
 
 ## Build the custom web-component
 
-When done developing; quit the running development server by hitting `ctrl + c` on the terminal. Now run the command below to have `vue-cli` v3.x **build** this component into a W3C web-component inside the `dist/` directory.
+When done developing; quit the running development server by hitting `ctrl + c` on the terminal. Now run the command below to have `vue-cli` v3.x **build** this component into a W3C web-component inside the `docs/` directory.
+
+I've used the `docs/` directory because this project is hosted on [Github](https://github.com/dutchwebworks/vue-web-component-demo) and this demo can be viewed from the Github Pages on a custom domain .
 
 ```bash
 npm run build
 ```
 
-The result is a very short static `dist/demo.html` -page. With a few HTML `<script>` -tags.
+The result is a very short static `docs/demo.html` -page. With a few HTML `<script>` -tags.
 
 ```html
 <script src="https://unpkg.com/vue"></script>
@@ -56,7 +58,7 @@ The result is a very short static `dist/demo.html` -page. With a few HTML `<scri
 
 ## View the static HTML demo
 
-To quickly view (or 'serve') this `dist/` directory run the command below. This will start a simple HTTP web server serving the `dist/` directory.
+To quickly view (or 'serve') this `docs/` directory run the command below. This will start a simple HTTP web server serving the `docs/` directory.
 
 ```bash
 npm run demo
