@@ -86,18 +86,6 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "09a7":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_lib_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_lib_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NameBlock_vue_vue_type_style_index_0_id_4f055df6_scoped_true_lang_css_shadow__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("6969");
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_lib_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_lib_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NameBlock_vue_vue_type_style_index_0_id_4f055df6_scoped_true_lang_css_shadow__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_lib_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_lib_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NameBlock_vue_vue_type_style_index_0_id_4f055df6_scoped_true_lang_css_shadow__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_lib_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_lib_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NameBlock_vue_vue_type_style_index_0_id_4f055df6_scoped_true_lang_css_shadow__WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_lib_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_lib_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NameBlock_vue_vue_type_style_index_0_id_4f055df6_scoped_true_lang_css_shadow__WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_lib_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_lib_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NameBlock_vue_vue_type_style_index_0_id_4f055df6_scoped_true_lang_css_shadow__WEBPACK_IMPORTED_MODULE_0___default.a); 
-
-/***/ }),
-
 /***/ "2350":
 /***/ (function(module, exports) {
 
@@ -176,117 +164,6 @@ function toComment(sourceMap) {
 	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
 
 	return '/*# ' + data + ' */';
-}
-
-
-/***/ }),
-
-/***/ "35d6":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-
-// CONCATENATED MODULE: ./node_modules/vue-style-loader/lib/listToStyles.js
-/**
- * Translates the list format produced by css-loader into something
- * easier to manipulate.
- */
-function listToStyles (parentId, list) {
-  var styles = []
-  var newStyles = {}
-  for (var i = 0; i < list.length; i++) {
-    var item = list[i]
-    var id = item[0]
-    var css = item[1]
-    var media = item[2]
-    var sourceMap = item[3]
-    var part = {
-      id: parentId + ':' + i,
-      css: css,
-      media: media,
-      sourceMap: sourceMap
-    }
-    if (!newStyles[id]) {
-      styles.push(newStyles[id] = { id: id, parts: [part] })
-    } else {
-      newStyles[id].parts.push(part)
-    }
-  }
-  return styles
-}
-
-// CONCATENATED MODULE: ./node_modules/vue-style-loader/lib/addStylesShadow.js
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return addStylesToShadowDOM; });
-
-
-function addStylesToShadowDOM (parentId, list, shadowRoot) {
-  var styles = listToStyles(parentId, list)
-  addStyles(styles, shadowRoot)
-}
-
-/*
-type StyleObject = {
-  id: number;
-  parts: Array<StyleObjectPart>
-}
-
-type StyleObjectPart = {
-  css: string;
-  media: string;
-  sourceMap: ?string
-}
-*/
-
-function addStyles (styles /* Array<StyleObject> */, shadowRoot) {
-  const injectedStyles =
-    shadowRoot._injectedStyles ||
-    (shadowRoot._injectedStyles = {})
-  for (var i = 0; i < styles.length; i++) {
-    var item = styles[i]
-    var style = injectedStyles[item.id]
-    if (!style) {
-      for (var j = 0; j < item.parts.length; j++) {
-        addStyle(item.parts[j], shadowRoot)
-      }
-      injectedStyles[item.id] = true
-    }
-  }
-}
-
-function createStyleElement (shadowRoot) {
-  var styleElement = document.createElement('style')
-  styleElement.type = 'text/css'
-  shadowRoot.appendChild(styleElement)
-  return styleElement
-}
-
-function addStyle (obj /* StyleObjectPart */, shadowRoot) {
-  var styleElement = createStyleElement(shadowRoot)
-  var css = obj.css
-  var media = obj.media
-  var sourceMap = obj.sourceMap
-
-  if (media) {
-    styleElement.setAttribute('media', media)
-  }
-
-  if (sourceMap) {
-    // https://developer.chrome.com/devtools/docs/javascript-debugging
-    // this makes source maps inside style tags work properly in Chrome
-    css += '\n/*# sourceURL=' + sourceMap.sources[0] + ' */'
-    // http://stackoverflow.com/a/26603875
-    css += '\n/*# sourceMappingURL=data:application/json;base64,' + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + ' */'
-  }
-
-  if (styleElement.styleSheet) {
-    styleElement.styleSheet.cssText = css
-  } else {
-    while (styleElement.firstChild) {
-      styleElement.removeChild(styleElement.firstChild)
-    }
-    styleElement.appendChild(document.createTextNode(css))
-  }
 }
 
 
@@ -587,8 +464,106 @@ function wrap (Vue, Component) {
 // EXTERNAL MODULE: ./node_modules/css-loader/lib/css-base.js
 var css_base = __webpack_require__("2350");
 
-// EXTERNAL MODULE: ./node_modules/vue-style-loader/lib/addStylesShadow.js + 1 modules
-var addStylesShadow = __webpack_require__("35d6");
+// CONCATENATED MODULE: ./node_modules/vue-style-loader/lib/listToStyles.js
+/**
+ * Translates the list format produced by css-loader into something
+ * easier to manipulate.
+ */
+function listToStyles (parentId, list) {
+  var styles = []
+  var newStyles = {}
+  for (var i = 0; i < list.length; i++) {
+    var item = list[i]
+    var id = item[0]
+    var css = item[1]
+    var media = item[2]
+    var sourceMap = item[3]
+    var part = {
+      id: parentId + ':' + i,
+      css: css,
+      media: media,
+      sourceMap: sourceMap
+    }
+    if (!newStyles[id]) {
+      styles.push(newStyles[id] = { id: id, parts: [part] })
+    } else {
+      newStyles[id].parts.push(part)
+    }
+  }
+  return styles
+}
+
+// CONCATENATED MODULE: ./node_modules/vue-style-loader/lib/addStylesShadow.js
+
+
+function addStylesToShadowDOM (parentId, list, shadowRoot) {
+  var styles = listToStyles(parentId, list)
+  addStyles(styles, shadowRoot)
+}
+
+/*
+type StyleObject = {
+  id: number;
+  parts: Array<StyleObjectPart>
+}
+
+type StyleObjectPart = {
+  css: string;
+  media: string;
+  sourceMap: ?string
+}
+*/
+
+function addStyles (styles /* Array<StyleObject> */, shadowRoot) {
+  const injectedStyles =
+    shadowRoot._injectedStyles ||
+    (shadowRoot._injectedStyles = {})
+  for (var i = 0; i < styles.length; i++) {
+    var item = styles[i]
+    var style = injectedStyles[item.id]
+    if (!style) {
+      for (var j = 0; j < item.parts.length; j++) {
+        addStyle(item.parts[j], shadowRoot)
+      }
+      injectedStyles[item.id] = true
+    }
+  }
+}
+
+function createStyleElement (shadowRoot) {
+  var styleElement = document.createElement('style')
+  styleElement.type = 'text/css'
+  shadowRoot.appendChild(styleElement)
+  return styleElement
+}
+
+function addStyle (obj /* StyleObjectPart */, shadowRoot) {
+  var styleElement = createStyleElement(shadowRoot)
+  var css = obj.css
+  var media = obj.media
+  var sourceMap = obj.sourceMap
+
+  if (media) {
+    styleElement.setAttribute('media', media)
+  }
+
+  if (sourceMap) {
+    // https://developer.chrome.com/devtools/docs/javascript-debugging
+    // this makes source maps inside style tags work properly in Chrome
+    css += '\n/*# sourceURL=' + sourceMap.sources[0] + ' */'
+    // http://stackoverflow.com/a/26603875
+    css += '\n/*# sourceMappingURL=data:application/json;base64,' + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + ' */'
+  }
+
+  if (styleElement.styleSheet) {
+    styleElement.styleSheet.cssText = css
+  } else {
+    while (styleElement.firstChild) {
+      styleElement.removeChild(styleElement.firstChild)
+    }
+    styleElement.appendChild(document.createTextNode(css))
+  }
+}
 
 // CONCATENATED MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 /* globals __VUE_SSR_CONTEXT__ */
@@ -685,14 +660,14 @@ function normalizeComponent (
   }
 }
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules//.cache//vue-loader","cacheIdentifier":"2867f158-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/NameBlock.vue?vue&type=template&id=4f055df6&scoped=true&shadow
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"name-block"},[_c('p',[_vm._v("Hello "+_vm._s(_vm.myName)+", from the component")]),_c('p',[_c('button',{on:{"click":_vm.changeName}},[_vm._v("Change my name")])])])}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules//.cache//vue-loader","cacheIdentifier":"2867f158-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VueWebComponent.vue?vue&type=template&id=b740d2da&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('h1',[_vm._v("My Vue Web Component")]),_c('h2',[_vm._v(_vm._s(_vm.title))]),_c('p',[_vm._v(_vm._s(_vm.msg))]),_c('fieldset',[_c('legend',[_vm._v("The component slot data")]),_vm._t("default")],2)])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/NameBlock.vue?vue&type=template&id=4f055df6&scoped=true&shadow
+// CONCATENATED MODULE: ./src/components/VueWebComponent.vue?vue&type=template&id=b740d2da&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/NameBlock.vue?vue&type=script&lang=js&shadow
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VueWebComponent.vue?vue&type=script&lang=js&
 //
 //
 //
@@ -703,49 +678,55 @@ var staticRenderFns = []
 //
 //
 //
-/* harmony default export */ var NameBlockvue_type_script_lang_js_shadow = ({
+//
+//
+//
+//
+//
+//
+/* harmony default export */ var VueWebComponentvue_type_script_lang_js_ = ({
+  props: ['msg', 'title'],
+
   data() {
     return {
-      myName: "Gregor",
-      newName: "Dennis"
+      title: this.title || "Default title"
     };
-  },
-
-  methods: {
-    changeName() {
-      this.myName = this.newName;
-    }
-
   }
+
 });
-// CONCATENATED MODULE: ./src/components/NameBlock.vue?vue&type=script&lang=js&shadow
- /* harmony default export */ var components_NameBlockvue_type_script_lang_js_shadow = (NameBlockvue_type_script_lang_js_shadow); 
-// CONCATENATED MODULE: ./src/components/NameBlock.vue?shadow
+// CONCATENATED MODULE: ./src/components/VueWebComponent.vue?vue&type=script&lang=js&
+ /* harmony default export */ var components_VueWebComponentvue_type_script_lang_js_ = (VueWebComponentvue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./src/components/VueWebComponent.vue
 
 
 
-function injectStyles (context) {
-  
-  var style0 = __webpack_require__("09a7")
-if (style0.__inject__) style0.__inject__(context)
 
-}
 
 /* normalize component */
 
 var component = normalizeComponent(
-  components_NameBlockvue_type_script_lang_js_shadow,
+  components_VueWebComponentvue_type_script_lang_js_,
   render,
   staticRenderFns,
   false,
-  injectStyles,
-  "4f055df6",
+  null,
+  null,
   null
   ,true
 )
 
-component.options.__file = "NameBlock.vue"
-/* harmony default export */ var NameBlockshadow = (component.exports);
+component.options.__file = "VueWebComponent.vue"
+/* harmony default export */ var VueWebComponent = (component.exports);
+// CONCATENATED MODULE: ./src/main.js?shadow
+
+
+
+var CustomElement = vue_wc_wrapper(external_Vue_default.a, VueWebComponent);
+window.customElements.define('my-custom-element', CustomElement);
+external_Vue_default.a.config.productionTip = false;
+new external_Vue_default.a({
+  render: h => h(App)
+}).$mount('#app');
 // CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-wc.js
 
 
@@ -757,24 +738,7 @@ component.options.__file = "NameBlock.vue"
 
 
 
-window.customElements.define('name-block', vue_wc_wrapper(external_Vue_default.a, NameBlockshadow))
-
-/***/ }),
-
-/***/ "6969":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("8d35");
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add CSS to Shadow Root
-var add = __webpack_require__("35d6").default
-module.exports.__inject__ = function (shadowRoot) {
-  add("701cf106", content, shadowRoot)
-};
+window.customElements.define('my-custom-element', vue_wc_wrapper(external_Vue_default.a, /* Cannot get final name for export "default" in "./src/main.js?shadow" (known exports: , known reexports: ) */ undefined))
 
 /***/ }),
 
@@ -783,22 +747,7 @@ module.exports.__inject__ = function (shadowRoot) {
 
 module.exports = Vue;
 
-/***/ }),
-
-/***/ "8d35":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("2350")(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.name-block[data-v-4f055df6]{padding:20px;border:1px solid gold;font-family:serif;font-size:32px\n}\nbutton[data-v-4f055df6]{padding:10px 20px;border:0;color:#fff;cursor:pointer;border-radius:10px;text-transform:uppercase;background-color:#ff1493\n}", ""]);
-
-// exports
-
-
 /***/ })
 
 /******/ });
-//# sourceMappingURL=name-block.js.map
+//# sourceMappingURL=my-custom-element.js.map
