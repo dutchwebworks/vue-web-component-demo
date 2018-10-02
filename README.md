@@ -64,7 +64,7 @@ To quickly view (or 'serve') this `docs/` directory run the command below. This 
 npm run demo
 ```
 
-Open the URL mentioned in the terminal in a web browser.
+Open the URL mentioned in the terminal in a web browser. The `docs/index.html` file contains a demo of a normal HTML page where the `<name-block></name-block>` W3C web-component is used.
 
 ## Using the Web-component
 
