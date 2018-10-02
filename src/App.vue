@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <NameBlock/>
+    <Home/>
   </div>
 </template>
 
 <script>
-import NameBlock from './components/NameBlock'
+import Home from './views/Home'
 
 export default {
   name: 'app',
   components: {
-    NameBlock
+    Home
   }
 }
 </script>
