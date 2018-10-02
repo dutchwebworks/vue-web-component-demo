@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <style>
+    	body {
+    		font-family: Verdana, sans-serif;
+    		font-size: 16px;
+    		font-weight: 400;
+    		line-height: 1.6;
+    	}
+        button {
+        	padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: gold;
+        }
+
+        main {
+        	max-width: 600px;
+        	margin: 0 auto;
+        	padding: 0 20px;
+        }
+
+        h1 {
+			color: deeppink;
+			font-size: 26px;
+        }
+
+        h2 {
+        	font-size: 22px;
+        	color: deepskyblue;
+        	margin: 40px 0 20px 0;
+        	padding: 0 0 20px 0;
+        	border-bottom: 1px solid #ddd;
+        }
+
+        a {
+        	color: deeppink;
+        }
+
+        footer {
+        	max-width: 600px;
+			padding-top: 10px;
+			margin: 10px auto 20px;
+        	color: #444;
+        	font-size: 14px;
+			text-align: right;
+        	border-top: 1px solid #ddd;
+        }
+
+        footer p {
+        	margin: 0;
+        }
+
+        footer a {
+        	font-size: 14px;
+        }
+
+        .code-example {
+        	text-align: center;
+        }
+    </style>
+
+    <title>VueJS Web-component</title>
+</head>
+
+<body>
+	<main>
+	    <h1>VueJS Web-component</h1>
+
+	    <h2>Normal HTML</h2>
+
+	    <p>In the HTML-head of this static web page; there's a embedded style tag with some basic CSS. The CSS rules style the HTML button-tag with a 'gold' background-color. </p>
+
+	    <p>
+	        <button>Normal button</button>
+	    </p>
+
+	    <p>As you can see the web-component below also uses a HTML-button tag. But &hellip; that button is NOT styled according to the embedded CSS of this page.</p>
+
+	    <h2>Web-component</h2>
+
+	    <p>
+	    	The block below is a Web-component. Originally a Vue component. The HTML, Css and JavaScripting is all contained inside the Web-component.	    	
+	    </p>
+
+	    <name-block></name-block>
+
+	    <p class="code-example">
+	    	<code>
+	    		&#x3C;name-block&#x3E;&#x3C;/name-block&#x3E;
+	    	</code>
+	    </p>
+
+		<p>
+			Because this is a Web-component; this page's Css doesn't interfere witht the Shadow DOM of the web-component.
+			Above Web-component is used as:
+		</p>
+    </main>
+
+    <footer>
+    	<p>
+    		View on <a href="https://github.com/dutchwebworks/vue-web-component-demo">Github</a>
+    	</p>
+    </footer>
+
+    <!-- Web component poly-fill, mainly for Edge -->
+    <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.0.0/webcomponents-bundle.js"></script>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script src="./name-block.js"></script>
+</body>
+</html>

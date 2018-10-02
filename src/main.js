@@ -1,12 +1,11 @@
-import Vue from 'vue'
+import Vue from 'vue';
+import App from './App.vue';
 import wrap from '@vue/web-component-wrapper';
-import VueWebComponent from './components/VueWebComponent';
+import NameBlock from './components/NameBlock.vue';
 
-const CustomElement = wrap(Vue, VueWebComponent);
+const CustomElement = wrap(Vue, NameBlock);
 
-window.customElements.define('my-custom-element', CustomElement);
-
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 new Vue({
   render: h => h(App)
