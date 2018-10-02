@@ -169,6 +169,129 @@ function toComment(sourceMap) {
 
 /***/ }),
 
+/***/ "35d6":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+
+// CONCATENATED MODULE: ./node_modules/vue-style-loader/lib/listToStyles.js
+/**
+ * Translates the list format produced by css-loader into something
+ * easier to manipulate.
+ */
+function listToStyles (parentId, list) {
+  var styles = []
+  var newStyles = {}
+  for (var i = 0; i < list.length; i++) {
+    var item = list[i]
+    var id = item[0]
+    var css = item[1]
+    var media = item[2]
+    var sourceMap = item[3]
+    var part = {
+      id: parentId + ':' + i,
+      css: css,
+      media: media,
+      sourceMap: sourceMap
+    }
+    if (!newStyles[id]) {
+      styles.push(newStyles[id] = { id: id, parts: [part] })
+    } else {
+      newStyles[id].parts.push(part)
+    }
+  }
+  return styles
+}
+
+// CONCATENATED MODULE: ./node_modules/vue-style-loader/lib/addStylesShadow.js
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return addStylesToShadowDOM; });
+
+
+function addStylesToShadowDOM (parentId, list, shadowRoot) {
+  var styles = listToStyles(parentId, list)
+  addStyles(styles, shadowRoot)
+}
+
+/*
+type StyleObject = {
+  id: number;
+  parts: Array<StyleObjectPart>
+}
+
+type StyleObjectPart = {
+  css: string;
+  media: string;
+  sourceMap: ?string
+}
+*/
+
+function addStyles (styles /* Array<StyleObject> */, shadowRoot) {
+  const injectedStyles =
+    shadowRoot._injectedStyles ||
+    (shadowRoot._injectedStyles = {})
+  for (var i = 0; i < styles.length; i++) {
+    var item = styles[i]
+    var style = injectedStyles[item.id]
+    if (!style) {
+      for (var j = 0; j < item.parts.length; j++) {
+        addStyle(item.parts[j], shadowRoot)
+      }
+      injectedStyles[item.id] = true
+    }
+  }
+}
+
+function createStyleElement (shadowRoot) {
+  var styleElement = document.createElement('style')
+  styleElement.type = 'text/css'
+  shadowRoot.appendChild(styleElement)
+  return styleElement
+}
+
+function addStyle (obj /* StyleObjectPart */, shadowRoot) {
+  var styleElement = createStyleElement(shadowRoot)
+  var css = obj.css
+  var media = obj.media
+  var sourceMap = obj.sourceMap
+
+  if (media) {
+    styleElement.setAttribute('media', media)
+  }
+
+  if (sourceMap) {
+    // https://developer.chrome.com/devtools/docs/javascript-debugging
+    // this makes source maps inside style tags work properly in Chrome
+    css += '\n/*# sourceURL=' + sourceMap.sources[0] + ' */'
+    // http://stackoverflow.com/a/26603875
+    css += '\n/*# sourceMappingURL=data:application/json;base64,' + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + ' */'
+  }
+
+  if (styleElement.styleSheet) {
+    styleElement.styleSheet.cssText = css
+  } else {
+    while (styleElement.firstChild) {
+      styleElement.removeChild(styleElement.firstChild)
+    }
+    styleElement.appendChild(document.createTextNode(css))
+  }
+}
+
+
+/***/ }),
+
+/***/ "4db7":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_lib_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_lib_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NameBlock_vue_vue_type_style_index_0_lang_css_shadow__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("662e");
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_lib_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_lib_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NameBlock_vue_vue_type_style_index_0_lang_css_shadow__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_lib_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_lib_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NameBlock_vue_vue_type_style_index_0_lang_css_shadow__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_lib_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_lib_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NameBlock_vue_vue_type_style_index_0_lang_css_shadow__WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_lib_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_lib_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NameBlock_vue_vue_type_style_index_0_lang_css_shadow__WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_lib_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_lib_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NameBlock_vue_vue_type_style_index_0_lang_css_shadow__WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
 /***/ "5a74":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -464,106 +587,8 @@ function wrap (Vue, Component) {
 // EXTERNAL MODULE: ./node_modules/css-loader/lib/css-base.js
 var css_base = __webpack_require__("2350");
 
-// CONCATENATED MODULE: ./node_modules/vue-style-loader/lib/listToStyles.js
-/**
- * Translates the list format produced by css-loader into something
- * easier to manipulate.
- */
-function listToStyles (parentId, list) {
-  var styles = []
-  var newStyles = {}
-  for (var i = 0; i < list.length; i++) {
-    var item = list[i]
-    var id = item[0]
-    var css = item[1]
-    var media = item[2]
-    var sourceMap = item[3]
-    var part = {
-      id: parentId + ':' + i,
-      css: css,
-      media: media,
-      sourceMap: sourceMap
-    }
-    if (!newStyles[id]) {
-      styles.push(newStyles[id] = { id: id, parts: [part] })
-    } else {
-      newStyles[id].parts.push(part)
-    }
-  }
-  return styles
-}
-
-// CONCATENATED MODULE: ./node_modules/vue-style-loader/lib/addStylesShadow.js
-
-
-function addStylesToShadowDOM (parentId, list, shadowRoot) {
-  var styles = listToStyles(parentId, list)
-  addStyles(styles, shadowRoot)
-}
-
-/*
-type StyleObject = {
-  id: number;
-  parts: Array<StyleObjectPart>
-}
-
-type StyleObjectPart = {
-  css: string;
-  media: string;
-  sourceMap: ?string
-}
-*/
-
-function addStyles (styles /* Array<StyleObject> */, shadowRoot) {
-  const injectedStyles =
-    shadowRoot._injectedStyles ||
-    (shadowRoot._injectedStyles = {})
-  for (var i = 0; i < styles.length; i++) {
-    var item = styles[i]
-    var style = injectedStyles[item.id]
-    if (!style) {
-      for (var j = 0; j < item.parts.length; j++) {
-        addStyle(item.parts[j], shadowRoot)
-      }
-      injectedStyles[item.id] = true
-    }
-  }
-}
-
-function createStyleElement (shadowRoot) {
-  var styleElement = document.createElement('style')
-  styleElement.type = 'text/css'
-  shadowRoot.appendChild(styleElement)
-  return styleElement
-}
-
-function addStyle (obj /* StyleObjectPart */, shadowRoot) {
-  var styleElement = createStyleElement(shadowRoot)
-  var css = obj.css
-  var media = obj.media
-  var sourceMap = obj.sourceMap
-
-  if (media) {
-    styleElement.setAttribute('media', media)
-  }
-
-  if (sourceMap) {
-    // https://developer.chrome.com/devtools/docs/javascript-debugging
-    // this makes source maps inside style tags work properly in Chrome
-    css += '\n/*# sourceURL=' + sourceMap.sources[0] + ' */'
-    // http://stackoverflow.com/a/26603875
-    css += '\n/*# sourceMappingURL=data:application/json;base64,' + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + ' */'
-  }
-
-  if (styleElement.styleSheet) {
-    styleElement.styleSheet.cssText = css
-  } else {
-    while (styleElement.firstChild) {
-      styleElement.removeChild(styleElement.firstChild)
-    }
-    styleElement.appendChild(document.createTextNode(css))
-  }
-}
+// EXTERNAL MODULE: ./node_modules/vue-style-loader/lib/addStylesShadow.js + 1 modules
+var addStylesShadow = __webpack_require__("35d6");
 
 // CONCATENATED MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 /* globals __VUE_SSR_CONTEXT__ */
@@ -660,14 +685,14 @@ function normalizeComponent (
   }
 }
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules//.cache//vue-loader","cacheIdentifier":"2867f158-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VueWebComponent.vue?vue&type=template&id=b740d2da&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('h1',[_vm._v("My Vue Web Component")]),_c('h2',[_vm._v(_vm._s(_vm.title))]),_c('p',[_vm._v(_vm._s(_vm.msg))]),_c('fieldset',[_c('legend',[_vm._v("The component slot data")]),_vm._t("default")],2)])}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules//.cache//vue-loader","cacheIdentifier":"2867f158-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/NameBlock.vue?vue&type=template&id=10f01f47&shadow
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"name-block"},[_c('h2',{staticClass:"name-block__title"},[_vm._v("Change username")]),_c('p',{staticClass:"name-block__username"},[_vm._v(_vm._s(_vm.myName))]),_c('p',{staticClass:"name-block__cta"},[_c('button',{staticClass:"name-block__button",on:{"click":_vm.changeName}},[_vm._v("\n            Change name\n        ")])])])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/VueWebComponent.vue?vue&type=template&id=b740d2da&
+// CONCATENATED MODULE: ./src/components/NameBlock.vue?vue&type=template&id=10f01f47&shadow
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VueWebComponent.vue?vue&type=script&lang=js&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/NameBlock.vue?vue&type=script&lang=js&shadow
 //
 //
 //
@@ -684,49 +709,49 @@ var staticRenderFns = []
 //
 //
 //
-/* harmony default export */ var VueWebComponentvue_type_script_lang_js_ = ({
-  props: ['msg', 'title'],
-
+/* harmony default export */ var NameBlockvue_type_script_lang_js_shadow = ({
   data() {
     return {
-      title: this.title || "Default title"
+      myName: "Gregor",
+      newName: "Ulrich"
     };
+  },
+
+  methods: {
+    changeName() {
+      this.myName = this.newName;
+    }
+
   }
-
 });
-// CONCATENATED MODULE: ./src/components/VueWebComponent.vue?vue&type=script&lang=js&
- /* harmony default export */ var components_VueWebComponentvue_type_script_lang_js_ = (VueWebComponentvue_type_script_lang_js_); 
-// CONCATENATED MODULE: ./src/components/VueWebComponent.vue
+// CONCATENATED MODULE: ./src/components/NameBlock.vue?vue&type=script&lang=js&shadow
+ /* harmony default export */ var components_NameBlockvue_type_script_lang_js_shadow = (NameBlockvue_type_script_lang_js_shadow); 
+// CONCATENATED MODULE: ./src/components/NameBlock.vue?shadow
 
 
 
+function injectStyles (context) {
+  
+  var style0 = __webpack_require__("4db7")
+if (style0.__inject__) style0.__inject__(context)
 
+}
 
 /* normalize component */
 
 var component = normalizeComponent(
-  components_VueWebComponentvue_type_script_lang_js_,
+  components_NameBlockvue_type_script_lang_js_shadow,
   render,
   staticRenderFns,
   false,
-  null,
+  injectStyles,
   null,
   null
   ,true
 )
 
-component.options.__file = "VueWebComponent.vue"
-/* harmony default export */ var VueWebComponent = (component.exports);
-// CONCATENATED MODULE: ./src/main.js?shadow
-
-
-
-var CustomElement = vue_wc_wrapper(external_Vue_default.a, VueWebComponent);
-window.customElements.define('my-custom-element', CustomElement);
-external_Vue_default.a.config.productionTip = false;
-new external_Vue_default.a({
-  render: h => h(App)
-}).$mount('#app');
+component.options.__file = "NameBlock.vue"
+/* harmony default export */ var NameBlockshadow = (component.exports);
 // CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-wc.js
 
 
@@ -738,7 +763,24 @@ new external_Vue_default.a({
 
 
 
-window.customElements.define('my-custom-element', vue_wc_wrapper(external_Vue_default.a, /* Cannot get final name for export "default" in "./src/main.js?shadow" (known exports: , known reexports: ) */ undefined))
+window.customElements.define('name-block', vue_wc_wrapper(external_Vue_default.a, NameBlockshadow))
+
+/***/ }),
+
+/***/ "662e":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("bcb9");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add CSS to Shadow Root
+var add = __webpack_require__("35d6").default
+module.exports.__inject__ = function (shadowRoot) {
+  add("86ef3fa6", content, shadowRoot)
+};
 
 /***/ }),
 
@@ -747,7 +789,22 @@ window.customElements.define('my-custom-element', vue_wc_wrapper(external_Vue_de
 
 module.exports = Vue;
 
+/***/ }),
+
+/***/ "bcb9":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("2350")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.name-block{max-width:200px;margin:0 auto;padding:20px;border:1px solid #999;border-radius:10px;font-family:Arial,sans-serif;font-size:32px;background:-webkit-gradient(linear,left top,left bottom,from(#eee),color-stop(80%,#999));background:linear-gradient(180deg,#eee 0,#999 80%)\n}\n.name-block__cta,.name-block__title,.name-block__username{margin:5px 0;text-align:center\n}\n.name-block__title{font-size:18px;font-weight:700;color:#00bfff\n}\n.name-block__username{margin:20px 0;font-size:45px\n}\n.name-block__button{padding:10px 20px;border:0;color:#fff;cursor:pointer;border-radius:10px;background-color:#00bfff\n}", ""]);
+
+// exports
+
+
 /***/ })
 
 /******/ });
-//# sourceMappingURL=my-custom-element.js.map
+//# sourceMappingURL=name-block.js.map
