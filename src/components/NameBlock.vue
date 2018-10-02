@@ -1,6 +1,6 @@
 <template>
     <div class="name-block">
-        <h2 class="name-block__title">Change username</h2>
+        <h2 class="name-block__title"><slot>Your username</slot></h2>
 
         <p class="name-block__username">{{ myName }}</p>
 
@@ -8,7 +8,7 @@
             <button 
                 @click="changeName"
                 class="name-block__button">
-                Change name
+                {{ button }}
             </button>
         </p>
     </div>
@@ -16,6 +16,12 @@
 
 <script>
     export default {
+        props: {
+            button: {
+                type: String,
+                default: "Change username"
+            }
+        },
         data() {
             return {
                 myName: "Gregor",

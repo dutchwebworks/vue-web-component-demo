@@ -685,12 +685,12 @@ function normalizeComponent (
   }
 }
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules//.cache//vue-loader","cacheIdentifier":"2867f158-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/NameBlock.vue?vue&type=template&id=10f01f47&shadow
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"name-block"},[_c('h2',{staticClass:"name-block__title"},[_vm._v("Change username")]),_c('p',{staticClass:"name-block__username"},[_vm._v(_vm._s(_vm.myName))]),_c('p',{staticClass:"name-block__cta"},[_c('button',{staticClass:"name-block__button",on:{"click":_vm.changeName}},[_vm._v("\n            Change name\n        ")])])])}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules//.cache//vue-loader","cacheIdentifier":"2867f158-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/NameBlock.vue?vue&type=template&id=4af21fcc&shadow
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"name-block"},[_c('h2',{staticClass:"name-block__title"},[_vm._t("default",[_vm._v("Your username")])],2),_c('p',{staticClass:"name-block__username"},[_vm._v(_vm._s(_vm.myName))]),_c('p',{staticClass:"name-block__cta"},[_c('button',{staticClass:"name-block__button",on:{"click":_vm.changeName}},[_vm._v("\n            "+_vm._s(_vm.button)+"\n        ")])])])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/NameBlock.vue?vue&type=template&id=10f01f47&shadow
+// CONCATENATED MODULE: ./src/components/NameBlock.vue?vue&type=template&id=4af21fcc&shadow
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/NameBlock.vue?vue&type=script&lang=js&shadow
 //
@@ -710,6 +710,13 @@ var staticRenderFns = []
 //
 //
 /* harmony default export */ var NameBlockvue_type_script_lang_js_shadow = ({
+  props: {
+    button: {
+      type: String,
+      default: "Change username"
+    }
+  },
+
   data() {
     return {
       myName: "Gregor",

@@ -85,27 +85,40 @@
 
         <h2>Web-component</h2>
 
+        <p><strong>Inspect the web-component below using browser developer tools.</strong></p>
+
         <p>
             The block below is a Web-component. Originally a Vue component. The HTML, Css and JavaScripting is all contained inside the Web-component.          
         </p>
 
-        <name-block></name-block>
+        <name-block
+            button="Change username">
+            Custom username
+        </name-block>
+
+        <p>
+            Web-component with <strong>attributes for button name</strong> and <code>slot</code> -data.
+        </p>
 
         <p class="code-example">
             <code>
-                &#x3C;name-block&#x3E;&#x3C;/name-block&#x3E;
+                <pre>
+&#x3C;name-block button="Change username"&#x3E;
+    Custom username
+&#x3C;/name-block&#x3E;
+                </pre>
             </code>
         </p>
 
         <p>
-            Because this is a Web-component; this page's Css doesn't interfere witht the Shadow DOM of the web-component.
-            Above Web-component is used as:
+            Because this is a Web-component; this page's Css doesn't interfere width the Shadow DOM of the web-component.
+            Above Web-component is used as the non-standard custom web-component tag above.
         </p>
     </main>
 
     <footer>
         <p>
-            View on <a href="https://github.com/dutchwebworks/vue-web-component-demo">Github</a>
+            View on <a href="https://github.com/dutchwebworks/vue-web-component-demo" target="_blank">Github</a>
         </p>
     </footer>
 
