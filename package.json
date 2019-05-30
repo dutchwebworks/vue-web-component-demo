@@ -8,12 +8,12 @@
     "demo": "http-server docs"
   },
   "dependencies": {
-    "vue": "^2.5.17"
+    "vue": "^2.6.10"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.0.3",
-    "@vue/cli-service": "^3.0.3",
+    "@vue/cli-plugin-babel": "^3.8.0",
+    "@vue/cli-service": "^3.8.0",
     "http-server": "^0.11.1",
-    "vue-template-compiler": "^2.5.17"
+    "vue-template-compiler": "^2.6.10"
   }
 }
