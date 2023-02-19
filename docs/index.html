@@ -2,71 +2,75 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <style>
-        body {
-            font-family: Verdana, sans-serif;
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 1.6;
-        }
-        button {
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            background-color: gold;
-        }
+<script src="https://unpkg.com/vue@2.7.14/dist/vue.js" defer></script>
 
-        main {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+<script src="name-block.js" defer></script>
 
-        h1 {
-            color: deeppink;
-            font-size: 26px;
-        }
+<style>
+    body {
+        font-family: Verdana, sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.6;
+    }
+    button {
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        background-color: gold;
+    }
 
-        h2 {
-            font-size: 22px;
-            color: deepskyblue;
-            margin: 40px 0 20px 0;
-            padding: 0 0 20px 0;
-            border-bottom: 1px solid #ddd;
-        }
+    main {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
 
-        a {
-            color: deeppink;
-        }
+    h1 {
+        color: deeppink;
+        font-size: 26px;
+    }
 
-        footer {
-            max-width: 600px;
-            padding-top: 10px;
-            margin: 10px auto 20px;
-            color: #444;
-            font-size: 14px;
-            text-align: right;
-            border-top: 1px solid #ddd;
-        }
+    h2 {
+        font-size: 22px;
+        color: deepskyblue;
+        margin: 40px 0 20px 0;
+        padding: 0 0 20px 0;
+        border-bottom: 1px solid #ddd;
+    }
 
-        footer p {
-            margin: 0;
-        }
+    a {
+        color: deeppink;
+    }
 
-        footer a {
-            font-size: 14px;
-        }
+    footer {
+        max-width: 600px;
+        padding-top: 10px;
+        margin: 10px auto 20px;
+        color: #444;
+        font-size: 14px;
+        text-align: right;
+        border-top: 1px solid #ddd;
+    }
 
-        .code-example {
-            text-align: center;
-        }
-    </style>
+    footer p {
+        margin: 0;
+    }
 
-    <title>VueJS Web-component</title>
+    footer a {
+        font-size: 14px;
+    }
+
+    .code-example {
+        text-align: center;
+    }
+</style>
+
+<title>VueJS Web-component</title>
 </head>
 
 <body>
@@ -103,9 +107,9 @@
         <p class="code-example">
             <code>
                 <pre>
-&#x3C;name-block button="Change username"&#x3E;
+    &#x3C;name-block button="Change username"&#x3E;
     Custom username
-&#x3C;/name-block&#x3E;
+    &#x3C;/name-block&#x3E;
                 </pre>
             </code>
         </p>
@@ -120,12 +124,6 @@
         <p>
             View on <a href="https://github.com/dutchwebworks/vue-web-component-demo" target="_blank">Github</a>
         </p>
-    </footer>
-
-    <!-- Web component poly-fill, mainly for Edge -->
-    <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.0.0/webcomponents-bundle.js"></script>
-
-    <script src="https://unpkg.com/vue"></script>
-    <script src="./name-block.js"></script>
+    </footer>    
 </body>
 </html>
